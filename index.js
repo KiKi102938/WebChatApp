@@ -10,14 +10,11 @@ app.get('/', (req, res) => {
 io.on('connection', (socket) => {
   socket.on('chat message', msg => {
     io.emit('chat message', msg);
-    console.log("Message : " + msg)
+    console.log(msg);
+
   });
 });
 
 http.listen(port, () => {
   console.log(`Socket.IO server running at http://localhost:${port}/`);
 });
-
-const POL = 1000
-
-console.log("your sever is running on port " + POL)
