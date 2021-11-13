@@ -17,9 +17,17 @@
       .pol {
         color: rgb(245, 245, 245);
       }
+      .ppl {
+        text-align:right;
+      }
     </style>
   </head>
   <body>
+    <div class="ppl"> <br>
+      <a href="/home"></a>
+    <img src="https://mickeyhellwebsite.web.app/icon.ico" width="150px">
+    <span>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</span>
+     </div>
     <ul id="messages" class="Pol" style="color: rgb(248, 248, 248);"></ul>
     <form id="form" action="">
       <input id="input" autocomplete="on" /><button>Send</button>
@@ -40,7 +48,7 @@
           input.value = '';
         }
       });
-
+window.location.reload()
       socket.on('chat message', function(msg) {
         var item = document.createElement('li');
         item.textContent = msg;

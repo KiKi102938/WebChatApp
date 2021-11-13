@@ -5,10 +5,13 @@ const port = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
+  console.log('Someone request At Main dirtories')
+  res.send('<script>window.location.reload() </script>')
 });
 
 app.get('/home',(req,res) => {
  res.sendFile(__dirname + '/home.html')
+ console.log('Someone request At /home dirtories')
 })
 
 app.get('/C/:mypara', (req, res) => {
@@ -23,12 +26,13 @@ app.get('/C/:mypara', (req, res) => {
     ' <style> .COLOR {color: rgb(99, 201, 201);} </style> ' 
   )
   console.log('Someone request at Costume Parameter Page!!')
+  console.log('With The Name Is : ' + req.params.mypara + 'And Like : ' + req.query.like)
 });
 
 io.on('connection', (socket) => {
   socket.on('chat message', msg => {
     io.emit('chat message', msg);
-    console.log(msg);
+    console.log('Message : '+ msg);
 
   });
 });
