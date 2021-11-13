@@ -6,7 +6,6 @@ const port = process.env.PORT || 3000;
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
   console.log('Someone request At Main dirtories')
-  res.send('<script>window.location.reload() </script>')
 });
 
 app.get('/home',(req,res) => {
